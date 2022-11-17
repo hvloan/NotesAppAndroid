@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">NotesApp</string>
-    <string name="my_notes">My Notes!</string>
+    <string name="my_notes">My Notes</string>
+    <string name="search">search</string>
+    <string name="search_note_here">Search note here!</string>
+    <string name="add_note">Add note</string>
+    <string name="add_web_link">Add web link</string>
+    <string name="add_image">Add image</string>
+    <string name="add_image_note">Add image note</string>
 </resources>

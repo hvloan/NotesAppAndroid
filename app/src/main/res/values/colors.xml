@@ -14,4 +14,5 @@
     <color name="colorMiscellaneousBackground">#1F1F1F</color>
     <color name="colorDelete">#FF4842</color>
     <color name="colorSearchBackground">#333333</color>
+    <color name="colorIcons">#FFFFFF</color>
 </resources>
