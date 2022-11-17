@@ -15,4 +15,8 @@
     <color name="colorDelete">#FF4842</color>
     <color name="colorSearchBackground">#333333</color>
     <color name="colorIcons">#FFFFFF</color>
+    <color name="colorNoteColor02">#FDBE3B</color>
+    <color name="colorNoteColor03">#FF4842</color>
+    <color name="colorNoteColor04">#3A52FC</color>
+    <color name="colorNoteColor05">#000000</color>
 </resources>
