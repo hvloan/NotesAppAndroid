@@ -18,7 +18,7 @@ class CreateNoteActivity : AppCompatActivity() {
 
     private fun actionComponent() {
         imageBack.setOnClickListener {
-            onBackPressed()
+            onBackPressedDispatcher.onBackPressed()
         }
     }
 

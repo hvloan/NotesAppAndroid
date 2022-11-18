@@ -1,38 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textMyNotes"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/my_notes"
-        android:textColor="@color/colorWhite"
         android:layout_marginStart="@dimen/_12sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_12sdp"
         android:includeFontPadding="false"
+        android:text="@string/my_notes"
+        android:textColor="@color/colorWhite"
         android:textSize="@dimen/_20ssp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/layoutSearch"
-        android:background="@drawable/background_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/background_search"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/_10sdp"
@@ -40,10 +36,11 @@
         app:layout_constraintTop_toBottomOf="@id/textMyNotes">
 
         <ImageView
-            android:src="@drawable/ic_search"
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
-            android:contentDescription="@string/search" />
+            android:contentDescription="@string/search"
+            android:src="@drawable/ic_search"
+            app:tint="@color/colorSearchIcon" />
 
         <EditText
             android:id="@+id/inputSearch"
@@ -51,14 +48,14 @@
             android:layout_height="@dimen/_35sdp"
             android:layout_marginStart="@dimen/_12sdp"
             android:background="@null"
-            android:hint="@string/search_note_here"
+            android:hint="@string/search"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:inputType="text"
             android:textColor="@color/colorWhite"
             android:textColorHint="#9E9E9E"
             android:textSize="@dimen/_13ssp"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -88,7 +85,7 @@
             android:id="@+id/imageAddNote"
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
-            android:contentDescription="@string/add_image_note"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_add_outline"
             app:tint="@color/colorIcons" />
 
@@ -97,7 +94,7 @@
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
             android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/add_image"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_image"
             app:tint="@color/colorIcons" />
 
@@ -106,27 +103,22 @@
             android:layout_width="@dimen/_23sdp"
             android:layout_height="@dimen/_23sdp"
             android:layout_marginStart="@dimen/_15sdp"
-            android:contentDescription="@string/add_web_link"
+            android:contentDescription="@string/app_name"
             android:src="@drawable/ic_web_link"
             app:tint="@color/colorIcons" />
-
     </LinearLayout>
 
     <ImageView
         android:id="@+id/imageAddNoteMain"
-        android:layout_width="@dimen/_35sdp"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_gravity="bottom|right"
-        android:layout_marginTop="-80dp"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_marginEnd="@dimen/_30sdp"
         android:background="@drawable/background_add_button"
-        android:contentDescription="@string/add_note"
-        android:padding="@dimen/_2sdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_5sdp"
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toTopOf="@id/layoutQuickActions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/layoutQuickActions"
-        app:tint="@color/colorPrimary"
-        tools:ignore="RtlHardcoded" />
-
-</LinearLayout>
+        app:tint="@color/colorPrimary" />
+</androidx.constraintlayout.widget.ConstraintLayout>
