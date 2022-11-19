@@ -14,10 +14,10 @@ import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.MediaStore
+import android.text.util.Linkify
 import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
@@ -103,24 +103,24 @@ class CreateNoteActivity : AppCompatActivity() {
         inputNoteText.setText(alreadyAvailableNote.noteText)
         textDateTime.text = alreadyAvailableNote.dateTime
         val imagePathStr = alreadyAvailableNote.imagePath
-        if (imagePathStr.trim { it <= ' ' }.isNotEmpty()) {
+        if (imagePathStr.trim().isNotEmpty()) {
             imageNote.setImageBitmap(BitmapFactory.decodeFile(imagePathStr))
             imageNote.visibility = View.VISIBLE
             imageRemoveImage.visibility = View.VISIBLE
             selectedImagePath = imagePathStr
         }
         val webLinkStr = alreadyAvailableNote.webLink
-        if (webLinkStr.trim { it <= ' ' }.isNotEmpty()) {
+        if (webLinkStr.trim().isNotEmpty()) {
             textWebURL.text = alreadyAvailableNote.webLink
             layoutWebURL.visibility = View.VISIBLE
         }
     }
 
     private fun saveNote() {
-        val noteTitle = inputNoteTitle.text.toString().trim { it <= ' ' }
-        val noteSubtitle = inputNoteSubtitle.text.toString().trim { it <= ' ' }
-        val noteText = inputNoteText.text.toString().trim { it <= ' ' }
-        val dateTimeStr = textDateTime.text.toString().trim { it <= ' ' }
+        val noteTitle = inputNoteTitle.text.toString().trim()
+        val noteSubtitle = inputNoteSubtitle.text.toString().trim()
+        val noteText = inputNoteText.text.toString().trim()
+        val dateTimeStr = textDateTime.text.toString().trim()
         if (noteTitle.isEmpty()) {
             Toast.makeText(this, "Note title can't be empty!", Toast.LENGTH_SHORT).show()
             return
@@ -137,6 +137,7 @@ class CreateNoteActivity : AppCompatActivity() {
         note.imagePath = selectedImagePath
         if (layoutWebURL.visibility == View.VISIBLE) {
             note.webLink = textWebURL.text.toString()
+            Linkify.addLinks(textWebURL, Linkify.WEB_URLS)
         }
         note.id = alreadyAvailableNote.id
         @SuppressLint("StaticFieldLeak")
@@ -220,7 +221,7 @@ class CreateNoteActivity : AppCompatActivity() {
             setSubtitleIndicatorColor()
         }
         val noteColorCode = alreadyAvailableNote.color
-        if (noteColorCode.trim { it <= ' ' }.isNotEmpty()) {
+        if (noteColorCode.trim().isNotEmpty()) {
             when (noteColorCode) {
                 "#FDBE3B" -> layoutMiscellaneous.findViewById<View>(R.id.viewColor2)
                     .performClick()
@@ -263,16 +264,13 @@ class CreateNoteActivity : AppCompatActivity() {
     private fun showDeleteNoteDialog() {
         if (dialogDeleteNote == null) {
             val builder = AlertDialog.Builder(this@CreateNoteActivity)
-            val view = LayoutInflater.from(this).inflate(
-                R.layout.layout_delete_note,
-                findViewById<View>(R.id.layoutDeleteNoteContainer) as ViewGroup
-            )
+            val view = LayoutInflater.from(this).inflate(R.layout.layout_delete_note, findViewById(R.id.layoutDeleteNoteContainer))
             builder.setView(view)
             dialogDeleteNote = builder.create()
             if (dialogDeleteNote?.window != null) {
                 dialogDeleteNote?.window!!.setBackgroundDrawable(ColorDrawable(0))
             }
-            view.findViewById<View>(R.id.textDeleteNote).setOnClickListener { v: View? ->
+            view.findViewById<View>(R.id.textDeleteNote).setOnClickListener {
                 @SuppressLint("StaticFieldLeak")
                 class DeleteNoteTask : AsyncTask<Void?, Void?, Void>() {
 
@@ -368,8 +366,7 @@ class CreateNoteActivity : AppCompatActivity() {
     private fun showAddURLDialog() {
         if (dialogAddURL == null) {
             val builder = AlertDialog.Builder(this@CreateNoteActivity)
-            val view = LayoutInflater.from(this)
-                .inflate(R.layout.layout_add_url, findViewById(R.id.layoutAddUrlContainer))
+            val view = LayoutInflater.from(this).inflate(R.layout.layout_add_url, findViewById(R.id.layoutAddUrlContainer))
             builder.setView(view)
             dialogAddURL = builder.create()
             if (dialogAddURL?.window != null) {
@@ -378,7 +375,7 @@ class CreateNoteActivity : AppCompatActivity() {
             val inputURL = view.findViewById<EditText>(R.id.inputURL)
             inputURL.requestFocus()
             view.findViewById<View>(R.id.textAdd).setOnClickListener { v: View? ->
-                val inputURLStr = inputURL.text.toString().trim { it <= ' ' }
+                val inputURLStr = inputURL.text.toString().trim()
                 if (inputURLStr.isEmpty()) {
                     Toast.makeText(this@CreateNoteActivity, "Enter URL", Toast.LENGTH_SHORT).show()
                 } else if (!Patterns.WEB_URL.matcher(inputURLStr).matches()) {

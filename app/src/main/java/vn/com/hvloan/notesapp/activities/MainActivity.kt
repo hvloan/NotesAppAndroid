@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity(), NotesListener {
         setContentView(R.layout.activity_main)
 
         initComponent()
-        actionComponent()
         getNotes(REQUEST_CODE_SHOW_NOTES, false)
+        actionComponent()
         setupNoteRecyclerView()
     }
 
