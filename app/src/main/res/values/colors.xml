@@ -19,4 +19,5 @@
     <color name="colorNoteColor03">#FF4842</color>
     <color name="colorNoteColor04">#3A52FC</color>
     <color name="colorNoteColor05">#000000</color>
+    <color name="colorNoteSubtitleText">#FAFAFA</color>
 </resources>

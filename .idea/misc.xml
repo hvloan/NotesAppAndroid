@@ -10,14 +10,19 @@
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_color_note_04.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_color_note_05.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_delete.xml" value="0.166" />
+        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_dialog.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_done_button.xml" value="0.166" />
+        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_note.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_search.xml" value="0.121" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/ic_add.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/ic_add_outline.xml" value="0.166" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/drawable/ic_search.xml" value="0.2265" />
-        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/activity_create_note.xml" value="0.22826086956521738" />
+        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/activity_create_note.xml" value="0.1282051282051282" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/item_container_note.xml" value="0.22826086956521738" />
+        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/layout_add_url.xml" value="0.22826086956521738" />
+        <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/layout_delete_note.xml" value="0.10989583333333333" />
         <entry key="..\:/hvloan/SourceCode/Courses/Android/NotesApp/app/src/main/res/layout/layout_miscellaneous.xml" value="0.20427350427350427" />
       </map>
     </option>

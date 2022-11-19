@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.com.hvloan.notesapp">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,12 +18,12 @@
         android:theme="@style/Theme.NotesApp"
         tools:targetApi="31">
         <activity
-            android:name=".CreateNoteActivity"
+            android:name=".activities.CreateNoteActivity"
             android:exported="false"
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="fullSensor"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="stateHidden"
             android:screenOrientation="fullSensor">
